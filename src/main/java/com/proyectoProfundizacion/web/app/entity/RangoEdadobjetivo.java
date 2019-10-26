@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 public class RangoEdadobjetivo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
 	@Column(name="RANGOED_ID")
 	private BigDecimal rangoedId;
 

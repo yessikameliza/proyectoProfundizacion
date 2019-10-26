@@ -22,6 +22,7 @@ public class Usuario implements Serializable {
 	private long usuarioId;
 
 	private String direccion;
+	private String nombre;
 
 	private BigDecimal edad;
 
@@ -109,6 +110,14 @@ public class Usuario implements Serializable {
 
 	public String getOcupacion() {
 		return this.ocupacion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public void setOcupacion(String ocupacion) {
