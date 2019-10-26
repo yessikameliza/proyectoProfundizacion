@@ -15,8 +15,8 @@ import com.proyectoProfundizacion.web.app.Service.PreguntaService;
  */
 @Controller
 public class PreguntaController {
-	@Autowired
-	PreguntaService asignaService;
+	//@Autowired
+//	PreguntaService asignaService;
 	
 
 }

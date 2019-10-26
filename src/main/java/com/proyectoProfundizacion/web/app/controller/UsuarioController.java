@@ -15,8 +15,8 @@ import com.proyectoProfundizacion.web.app.Service.UsuarioService;
 
 @Controller
 public class UsuarioController {
-	@Autowired
-	UsuarioService usuarioService;
+	//@Autowired
+	//UsuarioService usuarioService;
 
 
 }
