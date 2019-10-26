@@ -11,9 +11,9 @@ import org.springframework.data.repository.CrudRepository;
  * @author PERSONAL
  *
  */
-public interface temasInt_Encuesta_Repository extends CrudRepository<tema_interes, Long>{
+public interface EncuestaRepository extends CrudRepository<Encuesta, Long>{
 	
 	
-	public Optional<tema_interes> findByCodigo(String codigo);
+	public Optional<Encuesta> findByCodigo(String codigo);
 
 }
