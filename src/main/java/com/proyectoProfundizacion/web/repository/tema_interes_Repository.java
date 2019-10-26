@@ -7,13 +7,15 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
+import com.proyectoProfundizacion.web.app.entity.TemaIntere;
+
 /**
  * @author PERSONAL
  *
  */
-public interface tema_interes_Repository extends CrudRepository<tema_interes, Long>{
+public interface Tema_interes_Repository extends CrudRepository<TemaIntere, Long>{
 	
 	
-	public Optional<tema_interes> findByCodigo(String codigo);
+	public Optional<TemaIntere> findByCodigo(String codigo);
 
 }
