@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
+import com.proyectoProfundizacion.web.app.entity.Usuario;
+
 /**
  * @author PERSONAL
  *

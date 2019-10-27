@@ -22,7 +22,6 @@ public class Usuario implements Serializable {
 	private long usuarioId;
 
 	private String direccion;
-	private String nombre;
 
 	private BigDecimal edad;
 
@@ -36,6 +35,34 @@ public class Usuario implements Serializable {
 	private String nacionalidad;
 
 	private String ocupacion;
+	
+	private String Password;
+	private String nombre;
+	private String usuario;
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
 	//bi-directional many-to-one association to EncuestaUsuario
 	@OneToMany(mappedBy="usuario")
@@ -110,14 +137,6 @@ public class Usuario implements Serializable {
 
 	public String getOcupacion() {
 		return this.ocupacion;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 
 	public void setOcupacion(String ocupacion) {

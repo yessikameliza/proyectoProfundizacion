@@ -13,8 +13,9 @@ import java.math.BigDecimal;
 @NamedQuery(name="RangoEdadobjetivo.findAll", query="SELECT r FROM RangoEdadobjetivo r")
 public class RangoEdadobjetivo implements Serializable {
 	private static final long serialVersionUID = 1L;
-
 	@Id
+	@SequenceGenerator(name="RANGO_EDADOBJETIVO_rangoedId_GENERATOR" )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RANGO_EDADOBJETIVO_rangoedId_GENERATOR")
 	@Column(name="RANGOED_ID")
 	private BigDecimal rangoedId;
 
