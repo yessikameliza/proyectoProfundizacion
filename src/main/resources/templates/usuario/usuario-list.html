@@ -6,13 +6,14 @@
 		<thead class="thead-light">
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col">Codigo</th>
+				<th scope="col">Identificacion</th>
 				<th scope="col">Nombre</th>
-				<th scope="col">Apellido</th>
-				<th scope="col">Correo</th>
-				<th scope="col">Telefono</th>
+				<th scope="col">Nacionalidad</th>
+				<th scope="col">Genero</th>
+				<th scope="col">Direccion</th>
 				<th scope="col">Edad</th>
-				<th scope="col">Rol</th>
+				<th scope="col">Estado civil</th>
+				<th scope="col">Ocupacion</th>
 				<th scope="col">Username</th>
 				<th scope="col">Password</th>
 				<th scope="col">Acciones</th>
@@ -21,16 +22,16 @@
 		</thead>
 		<tbody>
 			<tr th:each="usuario: ${usuarioList}">
-				<td th:text="${usuario.id}" />
-				<td th:text="${usuario.codigo}" />
-				<td th:text="${usuario.nombre}" />
-				<td th:text="${usuario.apellido}" />
-				<td th:text="${usuario.correo}" />
-				<td th:text="${usuario.telefo}" />
-				<td th:text="${usuario.edad}" />
-				<td th:text="${usuario.role}" />
-				<td th:text="${usuario.username}" />
-				<td th:text="${usuario.password}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
+				<td th:text="${usuario.}" />
 				<td><a href="#" th:href="@{'/editUsuario/'+ ${usuario.id}}"><i
 						class="fas fa-edit"></i></a> | <a href="#"
 					th:onclick="'javascript:confirmDelete(\''+ ${usuario.id} +'\');'"><i

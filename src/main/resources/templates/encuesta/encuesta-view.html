@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Usuario</title>
+<title>Encuesta</title>
 
 <!--JQUERY-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -68,10 +68,10 @@
 					id="list" role="tabpanel" aria-labelledby="list-tab">
 					<div class="card">
 						<div class="card-header">
-							<h4>Usuarios</h4>
+							<h4>Encuestas</h4>
 						</div>
 						<div class="card-body">
-							<div th:include="usuario/usuario-list.html" th:remove="tag"></div>
+							<div th:include="encuesta/encuesta-list.html" th:remove="tag"></div>
 						</div>
 					</div>
 				</div>
@@ -79,16 +79,16 @@
 					id="form" role="tabpanel" aria-labelledby="form-tab">
 					<div class="card">
 						<div class="card-header">
-							<h4>Registro de usuarios</h4>
+							<h4>Registro de encuestas</h4>
 						</div>
 						<div class="card-body">
-							<div th:include="usuario/usuario-form.html" th:remove="tag"></div>
+							<div th:include="encuesta/encuesta-form.html" th:remove="tag"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div th:include="usuario/confirm-delete-dialog.html" th:remove="tag"></div>
+	<div th:include="encuesta/confirm-delete-dialog.html" th:remove="tag"></div>
 </body>
 </html>

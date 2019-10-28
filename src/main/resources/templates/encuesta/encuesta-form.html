@@ -4,7 +4,7 @@
 	<input class="form-control" type=hidden th:field=""
 		th:if="${editMode}">
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Identificacion
+		<label class="col-lg-3 col-form-label form-control-label">Nombre de la encuesta
 		</label>
 		<div class="col-lg-9">
 			<input class="form-control" type="text">
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+		<label class="col-lg-3 col-form-label form-control-label">Descripcion</label>
 		<div class="col-lg-9">
 			<input class="form-control" type="text"
 				>
@@ -23,17 +23,21 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Apellido
+		<label class="col-lg-3 col-form-label form-control-label">Tipo
 		</label>
 		<div class="col-lg-9">
-			<input class="form-control" type="text"
+			<select class="form-control" type="text"
 				>
+				<option value="">Seleccione un tipo</option>
+				<option value="Activo">Publica</option>
+				<option value="Inactivo">Privada</option>
+			</select>
 			<div class="alert-danger" 
 				>Name Error</div>
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Correo</label>
+		<label class="col-lg-3 col-form-label form-control-label">Objetivo</label>
 		<div class="col-lg-9">
 			<input class="form-control" type="text"
 				>
@@ -42,7 +46,7 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Telefono</label>
+		<label class="col-lg-3 col-form-label form-control-label">Genero</label>
 		<div class="col-lg-9">
 			<input class="form-control" type="text"
 				>
@@ -51,7 +55,25 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Edad</label>
+		<label class="col-lg-3 col-form-label form-control-label">Fecha inicio</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="date"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Fecha fin</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="date"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Catidad de personas</label>
 		<div class="col-lg-9">
 			<input class="form-control" type="text"
 				>
@@ -60,38 +82,7 @@
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">rol
-		</label>
-		<div class="col-lg-9">
-			<select class="form-control" type="text"
-				>
-				<option value="">Seleccione un rol</option>
-				<option value="Activo">ADMIN</option>
-				<option value="Inactivo">USER</option>
-			</select>
-			<div class="alert-danger" 
-				>Name Error</div>
-		</div>
-	</div>
-	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Username</label>
-		<div class="col-lg-9">
-			<input class="form-control" type="text"
-				>
-			<div class="alert-danger" 
-			>Name Error</div>
-		</div>
-	</div>
-	<div class="form-group row">
-		<label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-		<div class="col-lg-9">
-			<input class="form-control" type="password"
-				>
-			<div class="alert-danger" 
-				>Name Error</div>
-		</div>
-	</div>
+
 	<div class="form-group row">
 		<div class="col-lg-12 text-center">
 			<a class="btn btn-secondary" th:href="@{'/editUsuario/cancel'}">Cancelar</a>

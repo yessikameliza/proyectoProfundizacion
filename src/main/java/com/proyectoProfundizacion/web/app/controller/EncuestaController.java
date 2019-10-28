@@ -1,11 +1,7 @@
-/**
- * 
- */
 package com.proyectoProfundizacion.web.app.controller;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,47 +11,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.proyectoProfundizacion.web.app.Service.UsuarioService;
+import com.proyectoProfundizacion.web.app.entity.Encuesta;
 import com.proyectoProfundizacion.web.app.entity.Usuario;
 
-/**
- * @author PERSONAL
- *
- */
 
 @Controller
-public class UsuarioController {
-	//@Autowired
-	//UsuarioService usuarioService;
+public class EncuestaController {
 
-
-	@GetMapping({ "/", "/login" })
-	public String index() {
-		return "index";
-	}
-	
-	@GetMapping("/home")
-	public String ingresar() {
-		return "home";
-	}
-	@GetMapping("/pregunta")
-	public String pregunta(Model model) {
-		return "pregunta/preguntas";
-	}
-	
-	
-	
 	/**
 	 * Permite cargar el formulario de registro de usuario
 	 * @param model
 	 * @return  formulario usuario
 	 */
-	@GetMapping("/usuarioForm")
-	public String UsuarioForm(Model model) {
-		model.addAttribute("usuarioForm", new Usuario());
+	@GetMapping("/encuestaForm")
+	public String EncuestaForm(Model model) {
+		model.addAttribute("encuestaForm", new Encuesta());
 		//model.addAttribute("usuarioList", UsuarioService.getAllUsers());
 		model.addAttribute("listTab","active");
-		return "usuario/usuario-view";
+		return "encuesta/encuesta-view";
 	}
 	/**
      * Permite crear el usuario de acuerdo a los datos ingresado por 
@@ -65,18 +38,18 @@ public class UsuarioController {
      * @param model
      * @return formulario usuario
      */
-	@PostMapping("/usuarioForm")
-	public String createUsuario(@Valid @ModelAttribute("usuarioForm")Usuario asig, BindingResult result, ModelMap model) {
+	@PostMapping("/encuestaForm")
+	public String createUsuario(@Valid @ModelAttribute("encuestaForm")Usuario asig, BindingResult result, ModelMap model) {
 		//passwordEncoder = new BCryptPasswordEncoder();
 		//asig.setPassword(passwordEncoder.encode(asig.getPassword()));
 		//asig.setRole("ADMIN");
 		if (result.hasErrors()) {
-			model.addAttribute("usuarioForm", asig);
+			model.addAttribute("encuestaForm", asig);
 			model.addAttribute("formTab","active");
 		}else {
 		   try {
 			//UsuarioService.createUsuario(asig);
-			model.addAttribute("libroForm", new Usuario());
+			model.addAttribute("encuestaForm", new Encuesta());
 			model.addAttribute("listTab","active");
 		
 		} catch (Exception e) {
@@ -89,7 +62,7 @@ public class UsuarioController {
 		}
 		}
 	    	//model.addAttribute("usuarioList", UsuarioService.getAllUsers());
-	    	return "usuario/usuario-view";
+	    	return "encuesta/encuesta-view";
 	}
 	
 	/**
@@ -99,8 +72,8 @@ public class UsuarioController {
 	 * @return formuario usuario
 	 * @throws Exception
 	 */
-	@GetMapping("/editUsuario/{id}")
-	public String getEditUsuarioForm(Model model, @PathVariable(name ="id")Long id)throws Exception{
+	@GetMapping("/editEncuesta/{id}")
+	public String getEditEncuestaForm(Model model, @PathVariable(name ="id")Long id)throws Exception{
 		//Usuario asigToEdit = UsuarioService.getUsuarioById(id);
 
 	//	model.addAttribute("usuarioForm", asigToEdit);
@@ -108,7 +81,7 @@ public class UsuarioController {
 		model.addAttribute("formTab","active");
 		model.addAttribute("editMode","true");
 
-		return "usuario/usuario-view";
+		return "encuesta/encuesta-view";
 	}
 	
 	 /**
@@ -118,20 +91,20 @@ public class UsuarioController {
      * @param model
      * @return formulario usuario
      */
-	@PostMapping("/editUsuario")
-	public String postEditUsuarioForm(@Valid @ModelAttribute("usuarioForm")Usuario asig, BindingResult result, ModelMap model) {
+	@PostMapping("/editEncuesta")
+	public String postEditEncuestaForm(@Valid @ModelAttribute("encuestaForm")Encuesta asig, BindingResult result, ModelMap model) {
 		if(result.hasErrors()) {
-			model.addAttribute("usuarioForm", asig);
+			model.addAttribute("encuestaForm", asig);
 			model.addAttribute("formTab","active");
 			model.addAttribute("editMode","true");
 		}else {
 			try {
 			//	UsuarioService.updateUsuario(asig);
-				model.addAttribute("usuarioForm", new Usuario());
+				model.addAttribute("encuestaForm", new Encuesta());
 				model.addAttribute("listTab","active");
 			} catch (Exception e) {
 				model.addAttribute("formErrorMessage",e.getMessage());
-				model.addAttribute("usuarioForm", asig);
+				model.addAttribute("encuestaForm", asig);
 				model.addAttribute("formTab","active");
 				//model.addAttribute("usuarioList", UsuarioService.getAllUsers());
 				model.addAttribute("editMode","true");
@@ -139,7 +112,7 @@ public class UsuarioController {
 		}
 
 		//model.addAttribute("UsuarioList", UsuarioService.getAllUsers());
-		return "usuario/usuario-view";
+		return "encuesta/encuesta-view";
 
 	}
 
@@ -149,9 +122,9 @@ public class UsuarioController {
      * @param model
      * @return formulario usuario
      */
-	@GetMapping("/editUsuario/cancel")
-	public String cancelEditUsuario(ModelMap model) {
-		return "redirect:/usuarioForm";
+	@GetMapping("/editEncuesta/cancel")
+	public String cancelEditEncuesta(ModelMap model) {
+		return "redirect:/encuestaForm";
 	}
 	
 	/**
@@ -160,14 +133,14 @@ public class UsuarioController {
      * @param id del usuario a eliminar
      * @return formulario usuario
      */
-	@GetMapping("/deleteUsuario/{id}")
-	public String deleteUsuario(Model model, @PathVariable(name="id") Long id) {
+	@GetMapping("/deleteEncuesta/{id}")
+	public String deleteEncuesta(Model model, @PathVariable(name="id") Long id) {
 		try {
 		//	UsuarioService.deleteUsuario(id);
 		} catch (Exception e) {
 			model.addAttribute("Error de eliminacion","El usuario no puede ser eliminado");
 		}
-		return UsuarioForm(model);
+		return EncuestaForm(model);
 	}
 
 }
