@@ -19,8 +19,8 @@ public class Encuesta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="ENCUESTA_ENCUESTAID_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ENCUESTA_ENCUESTAID_GENERATOR")
+	@SequenceGenerator(name="ENCU_ENCUID_GENERATOR" )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ENCU_ENCUID_GENERATOR")
 	@Column(name="ENCUESTA_ID")
 	private long encuestaId;
 

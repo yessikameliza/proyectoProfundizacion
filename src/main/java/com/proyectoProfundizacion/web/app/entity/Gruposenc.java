@@ -14,7 +14,7 @@ public class Gruposenc implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="GRUPOSENC_GRUPOID_GENERATOR" )
+	@SequenceGenerator(name="GRUPOS_GRUPOID_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GRUPOSENC_GRUPOID_GENERATOR")
 	@Column(name="GRUPO_ID")
 	private long grupoId;
