@@ -1,0 +1,120 @@
+<form class="form" role="form" autocomplete="off"
+	th:object="${usuarioForm}"
+	th:action="${editMode} ?@{/editUsuario} :@{/usuarioForm}" method="post">
+	<input class="form-control" type=hidden th:field=""
+		th:if="${editMode}">
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Identificacion
+		</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text">
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Nacionalidad
+		</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Genero
+		</label>
+		<div class="col-lg-9">
+			<select class="form-control" type="text"
+				>
+				<option value="">Seleccione su genero</option>
+				<option value="Activo">Masculino</option>
+				<option value="Inactivo">Femenino</option>
+			</select>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Direccion </label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger"
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Edad</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Estado civil
+		</label>
+		<div class="col-lg-9">
+			<select class="form-control" type="text"
+				>
+				<option value="">Seleccione su estado civil</option>
+				<option value="Activo">Soltero</option>
+				<option value="Inactivo">Casado</option>
+				<option value="Inactivo">Union libre</option>
+				<option value="Inactivo">Viudo/a</option>
+			</select>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Ocupacion</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Username</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text"
+				>
+			<div class="alert-danger" 
+			>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="password"
+				>
+			<div class="alert-danger" 
+				>Name Error</div>
+		</div>
+	</div>
+	<div class="form-group row">
+		<div class="col-lg-12 text-center">
+			<a class="btn btn-secondary" th:href="@{'/editUsuario/cancel'}">Cancelar</a>
+			<input type="submit" class="btn btn-primary" value="Guardar"
+				th:value="${editMode}?'Actualizar':'Registrar'">
+		</div>
+	</div>
+	<div class="alert alert-danger text-center" th:if="${formErrorMessage}"
+		th:text="${formErrorMessage}">Error MEssage</div>
+</form>

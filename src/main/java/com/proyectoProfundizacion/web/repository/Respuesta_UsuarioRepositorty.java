@@ -13,9 +13,11 @@ import com.proyectoProfundizacion.web.app.entity.RespuestaUsuario;
  * @author PERSONAL
  *
  */
+
 public interface Respuesta_UsuarioRepositorty extends CrudRepository<RespuestaUsuario, Long>{
 	
 	
 	public Optional<RespuestaUsuario> findByCodigo(String codigo);
+
 
 }
