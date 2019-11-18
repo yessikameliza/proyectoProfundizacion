@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * The persistent class for the ENCUESTA database table.
- * 
+ * pruebaaaa
  */
 @Entity
 @NamedQuery(name="Encuesta.findAll", query="SELECT e FROM Encuesta e")
